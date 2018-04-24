@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Pusher Web Worker",
   "author": "jadranko.dragoje@gmail.com",
-  "main": "dist/worker.min.js",
+  "main": "dist/worker.js",
   "private": false,
   "license": "MIT",
   "scripts": {
