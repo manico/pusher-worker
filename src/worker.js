@@ -7,11 +7,10 @@ import { assign, defaults, template } from 'lodash';
 * @license  MIT
 */
 
-const apiEndpoint = 'http://api-${cluster}.pusher.com';
-
 const defaultOptions = {
   cluster: 'eu',
   version: '1.0',
+  endpoint: 'https://api-${cluster}.pusher.com'
 };
 
 const getAuthTimestamp = () => {
@@ -38,7 +37,7 @@ const getBodyMD5 = (payload) => {
 const sendEvent = (payload, options) => {
   defaults(options, defaultOptions);
 
-  const endpoint = template(apiEndpoint)({
+  const endpoint = template(options.endpoint)({
     cluster: options.cluster,
   });
 
