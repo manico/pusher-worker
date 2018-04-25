@@ -1,6 +1,6 @@
 {
   "name": "pusher-worker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pusher Web Worker",
   "author": "jadranko.dragoje@gmail.com",
   "main": "dist/worker.js",
