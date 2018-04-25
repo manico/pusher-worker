@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pusher Worker</title>
+</head>
+<body>
+  <button id="sendMessage">Send Message</button>
+  <script>
+    var sendMessageButton = document.getElementById('sendMessage');
+    var pusherWorker = new Worker('../dist/worker.js');
+
+    sendMessageButton.addEventListener('click', function () {
+      pusherWorker.postMessage({
+        action: 'sendEvent',
+        options: {
+          appId: 'YOUR_APP_ID',
+          key: 'YOUR_APP_KEY',
+          secret: 'YOUR_APP_SECRET'
+        },
+        payload: {
+          channel: 'MyChannel',
+          name: 'MyEvent',
+          data: {
+            success: true
+          }
+        }
+      });
+    }, false);
+  </script>
+</body>
+</html>
